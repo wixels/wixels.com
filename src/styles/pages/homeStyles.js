@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import bgImage from '../../assets/abstract-bg.png'
 import { motion } from 'framer-motion'
 
 export const Banner = styled.div`
@@ -13,7 +12,7 @@ export const Banner = styled.div`
 export const Video = styled.div`
   height: 100%;
   width: 100%;
-  background-image: url(${bgImage});
+  background-image: url(/images/abstract-bg2.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
