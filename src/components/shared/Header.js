@@ -40,13 +40,13 @@ export const Header = ({ onCursor, toggleMenu, setToggleMenu }) => {
             onMouseEnter={() => onCursor('hovered')}
             onMouseLeave={onCursor}
           >
-            <Link to='/'>WIX</Link>
+            <Link to='/'>L</Link>
             <span
               onMouseEnter={() => onCursor('pointer')}
               onMouseLeave={onCursor}
               onClick={() => toggleTheme()}
             />
-            <Link to='/'>LS</Link>
+            <Link to='/'>GO</Link>
           </Logo>
           <Menu onClick={() => setToggleMenu(!toggleMenu)}>
             <button>

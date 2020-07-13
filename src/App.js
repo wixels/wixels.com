@@ -59,7 +59,7 @@ export const App = () => {
       <GlobalStyle />
 
       <Router>
-        <CustomCursor />
+        <CustomCursor toggleMenu={toggleMenu} />
         <Header
           toggleMenu={toggleMenu}
           setToggleMenu={setToggleMenu}

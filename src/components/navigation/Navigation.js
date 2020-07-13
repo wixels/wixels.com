@@ -24,12 +24,26 @@ export const Navigation = ({ toggleMenu, setToggleMenu }) => {
     <>
       <AnimatePresence>
         {toggleMenu && (
-          <Nav>
+          <Nav
+            initial={{
+              x: '-100%'
+            }}
+            exit={{
+              x: '-100%'
+            }}
+            animate={{
+              x: toggleMenu ? 0 : '-100%'
+            }}
+            transition={{
+              duration: 0.4,
+              ease: [0.6, 0.05, -0.01, 0.9]
+            }}
+          >
             <Container>
               <NavHeader>
                 <Flex spaceBetween noHeight>
                   <h2>Projects</h2>
-                  <CloseNav onClick={() => setToggleMenu(false)}>
+                  <CloseNav onClick={() => setToggleMenu(!toggleMenu)}>
                     <button>
                       <span />
                       <span />
