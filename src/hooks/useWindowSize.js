@@ -8,7 +8,7 @@ export default function useWindowSize () {
     }
   }
 
-  const [windowSize, setWindowSize] = useState(getSize())
+  const [windowSize, setWindowSize] = useState(getSize)
 
   useEffect(() => {
     function handleResize () {
@@ -16,7 +16,6 @@ export default function useWindowSize () {
     }
 
     window.addEventListener('resize', handleResize)
-
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 

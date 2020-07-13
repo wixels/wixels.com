@@ -14,7 +14,7 @@ const navRoutes = [
   { id: 2, title: 'digger', path: '/digger', image: 'abstract-bg2.jpg' }
 ]
 
-export const Navigation = ({ toggleMenu, setToggleMenu }) => {
+export const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
   const [revealImage, setRevealImage] = React.useState({
     show: false,
     image: 'abstract-bg.png',
@@ -43,7 +43,11 @@ export const Navigation = ({ toggleMenu, setToggleMenu }) => {
               <NavHeader>
                 <Flex spaceBetween noHeight>
                   <h2>Projects</h2>
-                  <CloseNav onClick={() => setToggleMenu(!toggleMenu)}>
+                  <CloseNav
+                    onClick={() => setToggleMenu(!toggleMenu)}
+                    onMouseEnter={() => onCursor('pointer')}
+                    onMouseLeave={() => onCursor('')}
+                  >
                     <button>
                       <span />
                       <span />
@@ -65,6 +69,8 @@ export const Navigation = ({ toggleMenu, setToggleMenu }) => {
                         image: route.image,
                         key: route.id
                       })}
+                      onMouseEnter={() => onCursor('pointer')}
+                      onMouseLeave={() => onCursor('')}
                       key={route.id}
                     >
                       <Link to={`/projects/${route.path}`}>

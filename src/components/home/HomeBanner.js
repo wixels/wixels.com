@@ -92,6 +92,7 @@ export const HomeBanner = ({ onCursor }) => {
     }
   }
 
+
   return (
     <Banner>
       <Video className='video'>

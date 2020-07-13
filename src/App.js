@@ -13,6 +13,8 @@ import { Header } from './components/shared/Header'
 import { CustomCursor } from './components/CustomCursor'
 import { HomeBanner } from './components/home/HomeBanner'
 import { Navigation } from './components/navigation/Navigation'
+import { HomeContent } from './components/home/HomeContent'
+import { HomeFeature } from './components/home/HomeFeature'
 
 const GlobalStyle = createGlobalStyle`
 ${normalize}
@@ -36,12 +38,14 @@ body {
 // eslint-disable-next-line
 const darkTheme = {
   background: '#000',
-  text: '#fff'
+  text: '#fff',
+  red: '#ea291e'
 }
 
 const lightTheme = {
   background: '#fff',
-  text: '#000'
+  text: '#000',
+  red: '#ea291e'
 }
 
 export const App = () => {
@@ -73,6 +77,8 @@ export const App = () => {
         <Switch>
           <Route to='/'>
             <HomeBanner onCursor={onCursor} />
+            <HomeContent />
+            <HomeFeature onCursor={onCursor} />
           </Route>
         </Switch>
       </Router>
