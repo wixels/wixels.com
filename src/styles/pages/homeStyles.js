@@ -168,3 +168,32 @@ export const FeaturedProjects = styled.div`
     }
   }
 `
+// About
+export const HomeAboutSection = styled(motion.div)`
+  padding-bottom: 200px;
+  /* background: green; */
+`
+
+export const About = styled.div`
+  width: 100%;
+  h2 {
+    width: 60%;
+    font-size: 2.3rem;
+    font-weight: 400;
+    margin-left: 124px;
+    color: ${props => props.theme.text};
+  }
+  p {
+    max-width: 440px;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin-left: 124px;
+    color: ${props => props.theme.text};
+  }
+`
+
+export const Services = styled.div`
+  h3 {
+    color: ${props => props.theme.text}
+  }
+`

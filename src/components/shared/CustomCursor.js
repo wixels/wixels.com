@@ -1,10 +1,10 @@
 import React from 'react'
 
 // Context
-import { useGlobalStateContext } from '../context/globalContext'
+import { useGlobalStateContext } from '../../context/globalContext'
 
 // Styled Components
-import { Cursor } from '../styles/globalStyles'
+import { Cursor } from '../../styles/globalStyles'
 
 export const CustomCursor = ({ toggleMenu }) => {
   const { cursorType } = useGlobalStateContext()

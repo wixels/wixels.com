@@ -9,9 +9,9 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navRoutes = [
-  { id: 0, title: 'ioco connect', path: '/ioco-connect', image: 'abstract-bg.png' },
-  { id: 1, title: 'ceo awards', path: '/ceo-awards', image: 'abstract-bg1.jpg' },
-  { id: 2, title: 'digger', path: '/digger', image: 'abstract-bg2.jpg' }
+  { id: 0, title: 'ioco connect', path: '/projects/ioco-connect', image: 'abstract-bg.png' },
+  { id: 1, title: 'ceo awards', path: '/projects/ceo-awards', image: 'abstract-bg1.jpg' },
+  { id: 2, title: 'digger', path: '/projects/digger', image: 'abstract-bg2.jpg' }
 ]
 
 export const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
@@ -73,7 +73,10 @@ export const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
                       onMouseLeave={() => onCursor('')}
                       key={route.id}
                     >
-                      <Link to={`/projects/${route.path}`}>
+                      <Link
+                        to={route.path}
+                        onClick={() => setToggleMenu(!toggleMenu)}
+                      >
                         <motion.div
                           initial={{
                             x: -108

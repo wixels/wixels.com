@@ -1,5 +1,15 @@
 import styled, { css } from 'styled-components'
 
+export const AppWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+`
+
+export const ScrollWrapper = styled.div``
+
 export const Container = styled.div`
   flex-grow: 1;
   margin: 0 auto;
