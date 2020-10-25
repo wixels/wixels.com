@@ -28,6 +28,9 @@ export const Logo = styled.div`
     position: relative;
     bottom: 2px;
   }
+  @media (max-width: 689px) {
+    margin-left: 2rem;
+  }
 `
 
 export const Menu = styled.div`

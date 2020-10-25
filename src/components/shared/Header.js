@@ -4,23 +4,23 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // Styled Components
-import { HeaderNav, Logo, Menu } from '../../styles/shared/headerStyles'
+import { HeaderNav, Logo, /* Menu */ } from '../../styles/shared/headerStyles'
 import { Container, Flex } from '../../styles/globalStyles'
 
 // Context Imports
-import { useGlobalStateContext, useGlobalDispatchContext } from '../../context/globalContext'
+import { useGlobalStateContext, /* useGlobalDispatchContext */ } from '../../context/globalContext'
 
 export const Header = ({ onCursor, toggleMenu, setToggleMenu }) => {
-  const dispatch = useGlobalDispatchContext()
+  // const dispatch = useGlobalDispatchContext()
   const { currentTheme } = useGlobalStateContext()
 
-  const toggleTheme = () => {
-    if (currentTheme === 'dark') {
-      dispatch({ type: 'TOGGLE_THEME', theme: 'light' })
-    } else {
-      dispatch({ type: 'TOGGLE_THEME', theme: 'dark' })
-    }
-  }
+  // const toggleTheme = () => {
+  //   if (currentTheme === 'dark') {
+  //     dispatch({ type: 'TOGGLE_THEME', theme: 'light' })
+  //   } else {
+  //     dispatch({ type: 'TOGGLE_THEME', theme: 'dark' })
+  //   }
+  // }
 
   React.useEffect(() => {
     window.localStorage.setItem('theme', currentTheme)
@@ -40,20 +40,20 @@ export const Header = ({ onCursor, toggleMenu, setToggleMenu }) => {
             onMouseEnter={() => onCursor('hovered')}
             onMouseLeave={onCursor}
           >
-            <Link to='/'>L</Link>
+            <Link to='/'>WIX</Link>
             <span
               onMouseEnter={() => onCursor('pointer')}
               onMouseLeave={onCursor}
-              onClick={() => toggleTheme()}
+              // onClick={() => toggleTheme()}
             />
-            <Link to='/'>GO</Link>
+            <Link to='/'>LS</Link>
           </Logo>
-          <Menu onClick={() => setToggleMenu(!toggleMenu)}>
+          {/* <Menu onClick={() => setToggleMenu(!toggleMenu)}>
             <button>
               <span />
               <span />
             </button>
-          </Menu>
+          </Menu> */}
         </Flex>
       </Container>
     </HeaderNav>

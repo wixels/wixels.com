@@ -7,7 +7,7 @@ import React from 'react'
 import { useGlobalStateContext, useGlobalDispatchContext } from './context/globalContext'
 
 // Package Import
-import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, /* withRouter */ } from 'react-router-dom'
 
 // Styled Components
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
@@ -18,10 +18,10 @@ import { normalize } from 'styled-normalize'
 import { Header } from './components/shared/Header'
 import { CustomCursor } from './components/shared/CustomCursor'
 import { HomeBanner } from './components/home/HomeBanner'
-import { Navigation } from './components/navigation/Navigation'
-import { HomeContent } from './components/home/HomeContent'
+// import { Navigation } from './components/navigation/Navigation'
+// import { HomeContent } from './components/home/HomeContent'
+// import { HomeAbout } from './components/home/HomeAbout'
 import { HomeFeature } from './components/home/HomeFeature'
-import { HomeAbout } from './components/home/HomeAbout'
 import { ProjectBanner } from './components/project/ProjectBanner'
 
 const GlobalStyle = createGlobalStyle`
@@ -119,19 +119,14 @@ export const App = () => {
           setToggleMenu={setToggleMenu}
           onCursor={onCursor}
         />
-        <Navigation
-          setToggleMenu={setToggleMenu}
-          toggleMenu={toggleMenu}
-          onCursor={onCursor}
-        />
         {/* <AppWrapper ref={app}>
           <ScrollWrapper ref={scrollContainer}> */}
         <Switch>
           <Route exact path='/'>
             <HomeBanner onCursor={onCursor} />
-            <HomeContent />
+            {/* <HomeContent /> */}
             <HomeFeature onCursor={onCursor} />
-            <HomeAbout onCursor={onCursor} />
+            {/* <HomeAbout onCursor={onCursor} /> */}
           </Route>
           <Route exact path='/projects/:name'>
             <ProjectBanner />

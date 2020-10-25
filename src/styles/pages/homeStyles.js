@@ -7,15 +7,37 @@ export const Banner = styled.div`
   width: 100%;
   position: relative;
   margin-bottom: 296px;
+
+  @media (max-width: 689px) {
+    height: fit-content;
+    margin-bottom: 13rem;
+  }
 `
 
 export const Video = styled.div`
   height: 100%;
   width: 100%;
-  background-image: url(/images/abstract-bg2.jpg);
+  background-image: url(/images/banner.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
+
+  h2 {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: 1119px) {
+    height: 60vh;
+  }
+
+  @media (max-width: 689px) {
+    height: 40vh;
+  }
 `
 
 export const Canvas = styled.canvas`
@@ -31,18 +53,31 @@ export const BannerTitle = styled(motion.h1)`
   left: -18px;
   color: ${props => props.theme.text};
   pointer-events: none;
+  @media (max-width: 1119px) {
+    bottom: inherit;
+    top: 50vh;
+  }
+  @media (max-width: 689px) {
+    bottom: inherit;
+    top: 30vh;
+  }
 `
 export const Headline = styled(motion.span)`
   display: block;
   font-size: 18rem;
   font-weight: 900;
   line-height: 0.76;
-  /* mix-blend-mode: color-dodge; */
+  @media (max-width: 992px) {
+    font-size: 8rem;
+  }  
 `
 
 // Content
 export const HomeContentSection = styled(motion.div)`
   margin-bottom: 200px;
+  @media (max-width: 689px) {
+    margin-bottom: 20px
+  }
 `
 
 export const Content = styled.h2`
@@ -55,7 +90,6 @@ export const Content = styled.h2`
 
 // Featured
 export const HomeFeatureSection = styled(motion.div)`
-  margin-bottom: 200px;
   position: relative
 
   a {
@@ -69,6 +103,7 @@ export const FeaturedContent = styled(motion.div)`
   width: 100%;
   padding: 56px 124px;
   box-sizing: border-box;
+  margin-bottom: 3rem;
   color: ${props => props.theme.text}; 
 
   h3 {
@@ -82,10 +117,17 @@ export const FeaturedContent = styled(motion.div)`
       &:last-child {
         margin-left: 1rem;
       }
+
+      @media (max-width: 992px) {
+        margin: 0;
+      }
     }
   }
 
   .featured-title {
+    @media (max-width: 992px) {
+      display: none;
+    }
     transform: rotate(-90deg);
     position: absolute;
     bottom: 128px;
@@ -125,6 +167,10 @@ export const FeaturedVideo = styled.div`
   top: 0;
   display: block;
   overflow: hidden;
+  background-image: url(/images/grad.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 `
 
 export const FeaturedProjects = styled.div`

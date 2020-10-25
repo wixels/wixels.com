@@ -35,6 +35,7 @@ export const HomeBanner = ({ onCursor }) => {
   return (
     <Banner>
       <Video className='video'>
+        <h2>Coming Soon</h2>
         <BannerTitle variants={parent} initial='initial' animate='animate'>
           <Headline variants={child} initial='initial' animate='animate'>WIX</Headline>
           <Headline variants={child} initial='initial' animate='animate'>ELS</Headline>

@@ -13,7 +13,7 @@ export const ScrollWrapper = styled.div``
 export const Container = styled.div`
   flex-grow: 1;
   margin: 0 auto;
-  padding: 0 32px;
+  // padding: 0 32px;
   position: relative;
   width: autp;
   height: 100%;
@@ -98,5 +98,8 @@ export const Cursor = styled.div`
   &.nav-open,
   &.locked {
     border: 4px solid ${props => props.theme.text} !important;
+  }
+  @media (max-width: 689px) {
+    display: none;
   }
 `

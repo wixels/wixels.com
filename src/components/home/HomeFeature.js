@@ -1,44 +1,33 @@
 import React from 'react'
 
 // Package imports
-import { Link } from 'react-router-dom'
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+// import { Link } from 'react-router-dom'
+import { motion, /* useAnimation */ } from 'framer-motion'
+// import { useInView } from 'react-intersection-observer'
 
 // Styled imports
 import { Container, Flex } from '../../styles/globalStyles'
-import { HomeFeatureSection, FeaturedContent, FeaturedVideo, FeaturedProjects } from '../../styles/pages/homeStyles'
+import { HomeFeatureSection, FeaturedContent, FeaturedVideo /* FeaturedProjects */ } from '../../styles/pages/homeStyles'
 
 export const HomeFeature = ({ onCursor }) => {
-  const animation = useAnimation()
+  // const animation = useAnimation()
 
   const [hovered, setHovered] = React.useState(false)
-  const [featuredRef, inView] = useInView({
-    triggerOnce: true,
-    rootMargin: '-300px'
-  })
+  // const [featuredRef, inView] = useInView({
+  //   triggerOnce: true,
+  //   rootMargin: '-300px'
+  // })
 
-  React.useEffect(() => {
-    if (inView) {
-      animation.start('visible')
-    }
-  }, [animation, inView])
+  // React.useEffect(() => {
+  //   if (inView) {
+  //     animation.start('visible')
+  //   }
+  // }, [animation, inView])
+
   return (
-    <HomeFeatureSection
-      ref={featuredRef}
-      animate={animation}
-      initial='hidden'
-      variants={{
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }
-        },
-        hidden: { opacity: 0, y: 72 }
-      }}
-    >
-      <Container>
-        <Link>
+    <HomeFeatureSection className='homeFeatureSection' >
+      <Container className='container'>
+        <a href='mailto:hello@wixels.com' target='blank'>
           <FeaturedContent
             onHoverStart={() => setHovered(!hovered)}
             onHoverEnd={() => setHovered(!hovered)}
@@ -46,7 +35,10 @@ export const HomeFeature = ({ onCursor }) => {
             onMouseLeave={onCursor}
           >
             <Flex spaceBetween>
-              <h3>Onboarding Communications App</h3>
+              <div>
+                <p>Feel free to ask us anything at: </p>
+                <h3>hello@wixels.com</h3>
+              </div>
               <motion.div
                 animate={{
                   // y: hovered ? 0 : -48,
@@ -55,12 +47,12 @@ export const HomeFeature = ({ onCursor }) => {
                 transition={{ duration: 0.3, ease: [0.6, 0.05, -0.01, 0.9] }}
                 class='meta'
               >
-                <h4>EOH</h4>
-                <h4>2020</h4>
+                <h4>CHAT</h4>
+                <h4>SOON</h4>
               </motion.div>
             </Flex>
             <h2 class='featured-title'>
-              IOCO <br /> CONNECT
+              CONTACT <br /> US
               <span class='arrow'>
                 <motion.svg
                   animate={{ x: hovered ? 48 : 0 }}
@@ -77,12 +69,12 @@ export const HomeFeature = ({ onCursor }) => {
               </span>
             </h2>
           </FeaturedContent>
-          <FeaturedVideo>
-            <video loop muted autoPlay src='/video/video1.mp4' />
-          </FeaturedVideo>
-        </Link>
+          <FeaturedVideo />
+          {/* <video loop muted autoPlay src='/video/video1.mp4' />
+          </FeaturedVideo> */}
+        </a>
       </Container>
-      <Container>
+      {/* <Container>
         <FeaturedProjects>
           <Flex flexEnd>
             <button>
@@ -90,7 +82,7 @@ export const HomeFeature = ({ onCursor }) => {
             </button>
           </Flex>
         </FeaturedProjects>
-      </Container>
+      </Container> */}
     </HomeFeatureSection>
   )
 }
